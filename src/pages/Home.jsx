@@ -116,8 +116,8 @@ export default function Home() {
           {[
             { big: "0", small: "Ro‘yxatdan o‘tgan foydalanuvchilar" },
             { big: "0", small: "Test savollari bazasi" },
-            { big: "85%", small: "Muvaffaqiyat ko‘rsatkichi" },
-            { big: "5+", small: "Yillik tajriba" },
+            { big: "0", small: "Muvaffaqiyat ko‘rsatkichi" },
+            { big: "0", small: "Yillik tajriba" },
           ].map((x) => (
             <div
               key={x.big}

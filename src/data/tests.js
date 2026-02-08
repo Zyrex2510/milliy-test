@@ -1,22 +1,49 @@
-export const tests = {
-  math: {
-    1: {
-      title: "Modul 1: Algebra",
-      duration: 3600, // 60 daqiqa (sekundda)
-      questions: [
-        {
-          id: 1,
-          question: "Hisoblang: 2 + 3 × 4",
-          options: ["14", "20", "24", "10"],
-          correct: 0,
-        },
-        {
-          id: 2,
-          question: "x = 5 bo‘lsa, 2x + 1 nechaga teng?",
-          options: ["9", "10", "11", "12"],
-          correct: 2,
-        },
-      ],
-    },
+import { msDekabrMath } from "./ms_dekabr_math";
+import { msDekabrUzbek } from "./ms_dekabr_uzbek";
+
+// Barcha testlar shu yerda ro‘yxatda turadi.
+// Keyin yangi test qo‘shish: shu arrayga yana bitta item qo‘shasiz.
+export const TESTS = [
+  { subject: "math", id: 1, data: msDekabrMath },
+  { subject: "uzbek", id: 1, data: msDekabrUzbek },
+  // physics, history keyin qo‘shiladi
+];
+
+export function getTest(subject, id) {
+  const found = TESTS.find(
+    (t) => t.subject === String(subject) && String(t.id) === String(id)
+  );
+  return found?.data || null;
+}
+
+export function getTestsBySubject(subject) {
+  return TESTS.filter((t) => t.subject === String(subject)).map((t) => t.data);
+}
+
+// UI uchun fanlar ro‘yxati (Test ishlash / O‘rganish uchun)
+export const SUBJECTS = [
+  {
+    key: "math",
+    title: "Matematika",
+    desc: "Milliy sertifikat matematika testlari.",
+    enabled: true,
   },
-};
+  {
+    key: "physics",
+    title: "Fizika",
+    desc: "Tez orada qo‘shiladi.",
+    enabled: false,
+  },
+  {
+    key: "uzbek",
+    title: "Ona tili",
+    desc: "Milliy sertifikat ona tili testlari.",
+    enabled: true,
+  },
+  {
+    key: "history",
+    title: "Tarix",
+    desc: "Tez orada qo‘shiladi.",
+    enabled: false,
+  },
+];

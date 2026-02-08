@@ -3,8 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { InlineMath } from "react-katex";
 import ProgressBar from "../components/ProgressBar";
-import { msDekabrMath } from "../data/ms_dekabr_math";
-import { msDekabrUzbek } from "../data/ms_dekabr_uzbek";
+import { getTest } from "../data/tests";
 
 // Gemini ba’zan \( \) yoki \[ \] bilan qaytaradi — buni $...$ ga o‘tkazamiz
 function normalizeMathDelimiters(text) {
@@ -38,11 +37,7 @@ export default function Test() {
   const { subject, id } = useParams();
   const navigate = useNavigate();
 
-  const test = useMemo(() => {
-    if (subject === "math" && String(id) === "1") return msDekabrMath;
-    if (subject === "uzbek" && String(id) === "1") return msDekabrUzbek;
-    return null;
-  }, [subject, id]);
+  const test = useMemo(() => getTest(subject, id), [subject, id]);
 
   // Test topilmasa
   if (!test) {

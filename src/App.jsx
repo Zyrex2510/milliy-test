@@ -3,11 +3,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
-import Math from "./pages/Math";
-import Physics from "./pages/Physics";
-import Uzbek from "./pages/Uzbek";
+import TestsHome from "./pages/TestsHome";
+import SubjectTests from "./pages/SubjectTests";
+
+import LearnHome from "./pages/LearnHome";
+import SubjectLessons from "./pages/SubjectLessons";
+import Lesson from "./pages/Lesson";
+
+
+
 import Test from "./pages/Test";
-import History from "./pages/History";
 
 export default function App() {
   return (
@@ -16,11 +21,17 @@ export default function App() {
       <div className="pt-28">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/math" element={<Math />} />
-          <Route path="/physics" element={<Physics />} />
-          <Route path="/uzbek" element={<Uzbek />} />
-          <Route path="/history" element={<History />} />
+
+          {/* TESTS FLOW */}
+          <Route path="/tests" element={<TestsHome />} />
+          <Route path="/tests/:subject" element={<SubjectTests />} />
           <Route path="/test/:subject/:id" element={<Test />} />
+
+          {/* LEARN FLOW */}
+          <Route path="/learn" element={<LearnHome />} />
+          <Route path="/learn/:subject" element={<SubjectLessons />} />
+          <Route path="/learn/:subject/:lessonId" element={<Lesson />} />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
