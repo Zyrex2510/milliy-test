@@ -9,6 +9,7 @@ export default function Footer() {
             kelajakda Ona tili va Fizika bo‘limlari kengayadi.
           </p>
           <p className="text-slate-400 mt-4">bahodirovmuhammadamin3@gmail.com</p>
+          <p className="text-slate-400 mt-4">burhonovamerozihon@gmail.com</p>
         </div>
 
         <div>
