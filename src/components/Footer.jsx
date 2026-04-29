@@ -27,6 +27,8 @@ export default function Footer() {
           <ul className="space-y-2 text-slate-400">
             <li>+998 33 123 21 13</li>
             <li>Telegram: @IT_ZYREX</li>
+            <li>+998 90 144 73 66</li>
+            <li>Telegram: @BurhonovaMeroji</li>
           </ul>
         </div>
       </div>
