@@ -114,10 +114,10 @@ export default function Home() {
 
         <div className="mt-10 grid md:grid-cols-4 gap-5">
           {[
-            { big: "0", small: "Ro‘yxatdan o‘tgan foydalanuvchilar" },
-            { big: "0", small: "Test savollari bazasi" },
-            { big: "0", small: "Muvaffaqiyat ko‘rsatkichi" },
-            { big: "0", small: "Yillik tajriba" },
+            { big: "100+", small: "Ro‘yxatdan o‘tgan foydalanuvchilar" },
+            { big: "4", small: "Test savollari bazasi" },
+            { big: "95%", small: "Muvaffaqiyat ko‘rsatkichi" },
+            { big: "1", small: "Yillik tajriba" },
           ].map((x) => (
             <div
               key={x.big}
